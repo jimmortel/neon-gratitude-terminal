@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Gratitude Terminal</title>
+    <style>
+        body {
+            background-color: #050505;
+            color: #00ff41; /* Vert Matrix/Cyberpunk */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            text-shadow: 0 0 5px #00ff41;
+        }
+
+        .terminal {
+            border: 2px solid #00ff41;
+            padding: 20px;
+            background: rgba(0, 255, 65, 0.05);
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+            width: 80%;
+            max-width: 400px;
+        }
+
+        .glitch {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #00ff41;
+        }
+
+        .stat-line { margin: 10px 0; }
+
+        .value { color: #fff; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <div class="terminal">
+        <div class="glitch">> NEON_GRATITUDE_v1.0</div>
+        <div class="stat-line">USER: <span class="value">eagle-pi</span></div>
+        <div class="stat-line">STATUS: <span class="value" style="color: #007bff;">STAKER_LEVEL_1</span></div>
+        <div class="stat-line">FLOW_RATE: <span class="value">70.16 TYSM/d</span></div>
+        <div class="stat-line">LIVE_EARNED: <span id="counter" class="value">0.0000</span></div>
+    </div>
+
+    <script>
+        // Un petit script pour faire monter tes gains en direct
+        let count = 0;
+        setInterval(() => {
+            count += 0.0008; // Simule ton gain par seconde
+            document.getElementById('counter').innerText = count.toFixed(4);
+        }, 1000);
+    </script>
+</body>
+</html>
